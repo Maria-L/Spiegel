@@ -1,0 +1,31 @@
+#left-panel {
+    float: left;
+}
+
+#right-panel {
+    float: right;
+}
+
+#left-panel, #right-panel {
+    height: 500px;
+    width: 100px;
+    border: 1px solid gray;
+    display: inline-block;
+    margin: 10px;
+}
+
+#panels {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    height: 520px;
+    width: 100%;
+}
+
+#welcome-text {
+    text-align: center;
+}
+
+*{
+	background-color: transparent;
+}
