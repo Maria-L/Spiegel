@@ -5,7 +5,7 @@ using Microsoft.Kinect;
 
 
 //Diagramme Tutorial https://msdn.microsoft.com/de-de/library/dd489237.aspx
-// Interessante Doku https://www.uni-trier.de/fileadmin/urt/doku/csharp/v40/csharp4.pdf
+// Interessante Doku https://www.uni-trier.de/fileadmin/urt/doku/csharp/v40/csharp4.pfd
 namespace KinectTest
 {
 
@@ -51,10 +51,7 @@ namespace KinectTest
            
                     //camera.Source = frame.ToBitmap();
                   //Hier wird irgendwas nicht gefunden. Was ist das Problem mitder Viewbox und dem camera Objekt?
-                    camera.Source = frame.ToSubBitmap(270, 0, 640, 1080);
-                    
-                    info.Content = "Test Content";
-              
+                    camera.Source = frame.ToSubBitmap(270, 0, 640, 1080);                  
                     // }
 
                     frame.Dispose();

@@ -7,11 +7,9 @@
         xmlns:awe="http://schemas.awesomium.com/winfx" x:Class="KinectTest.MainWindow"
         Title="Kinect v2" Height="1080" Width="640">
     <Grid>
-
         <Viewbox>
             <Image x:Name="camera"/>
         </Viewbox>
-        <Label x:Name ="info" Margin="202,78,74,839" Width="356" RenderTransformOrigin="0.504,0.458"/>
-        <awe:WebControl Name="browser" Source="C:\Users\CSTI\\Documents\Spiegel1\KinectTest\mirror\index.html" IsTransparent="True"/>
+        <awe:WebControl Name="browser" Source="C:\Users\CSTI\\Documents\Spiegel\KinectTest\mirror\index.html" IsTransparent="True"/>
     </Grid>
 </Window>

@@ -1,4 +1,4 @@
-#left-panel {
+#meta-panel {
     float: left;
 }
 
@@ -6,19 +6,20 @@
     float: right;
 }
 
-#left-panel, #right-panel {
-    height: 500px;
-    width: 100px;
+#meta-panel, #right-panel {
+	width: 100px;
+	height: 600px;
     border: 1px solid gray;
     display: inline-block;
     margin: 10px;
+	background:rgba(224, 224, 224, 0.7);
 }
 
 #panels {
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    height: 520px;
+    height: 900px;
     width: 100%;
 }
 
@@ -26,6 +27,7 @@
     text-align: center;
 }
 
-*{
-	background-color: transparent;
+.button:hover{
+	background-color: #4CAF50;
+    color: white;
 }

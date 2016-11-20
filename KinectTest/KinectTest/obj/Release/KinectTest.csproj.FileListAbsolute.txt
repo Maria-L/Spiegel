@@ -17,8 +17,6 @@ C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\obj\Release\KinectTest.csp
 C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\obj\Release\KinectTest.exe
 C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\obj\Release\KinectTest.pdb
 C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\obj\Release\KinectTest.csprojResolveAssemblyReference.cache
-C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\obj\Release\SideBarLeft.g.cs
-C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\obj\Release\SideBarLeft.baml
 C:\Users\CSTI\Documents\Spiegel1\KinectTest\KinectTest\bin\Release\KinectTest.exe.config
 C:\Users\CSTI\Documents\Spiegel1\KinectTest\KinectTest\obj\Release\KinectTest.exe
 C:\Users\CSTI\Documents\Spiegel1\KinectTest\KinectTest\obj\Release\KinectTest.pdb
@@ -53,3 +51,18 @@ C:\Users\CSTI\Documents\Spiegel1\KinectTest\KinectTest\bin\Release\awesomium_pro
 C:\Users\CSTI\Documents\Spiegel1\KinectTest\KinectTest\bin\Release\inspector.pak
 C:\Users\CSTI\Documents\Spiegel1\KinectTest\KinectTest\bin\Release\xinput9_1_0.dll
 C:\Users\CSTI\Documents\Spiegel1\KinectTest\KinectTest\bin\Release\pdf_js.pak
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\Awesomium.Core.dll
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\Awesomium.Windows.Controls.dll
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\Awesomium.Core.xml
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\Awesomium.Windows.Controls.xml
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\awesomium.dll
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\icudt.dll
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\avcodec-53.dll
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\avformat-53.dll
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\avutil-51.dll
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\libEGL.dll
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\libGLESv2.dll
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\awesomium_process
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\inspector.pak
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\xinput9_1_0.dll
+C:\Users\CSTI\Documents\Spiegel\KinectTest\KinectTest\bin\Release\pdf_js.pak
