@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Mirror</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -9,13 +10,13 @@
 
 </head>
 
-<body>
-<h2 id="welcome-text">Einen schoenen Tag...</h2>
+<body onload="spiegel()">
+<h2>Einen schönen Tag <a id="welcome-text"/></h2>
 <div id="panels">
     <div id="meta-panel" style="color:red;font-size:13px">
 		<h3 style="font-size:20px"> Allgemein </h3>
 		<hr noshade color="#00000" size="2">
-		<p><b>Groesse: <a id="groesse"/></b></p>
+		<p><b>Größe: <a id="groesse"/></b></p>
 		<p><b>Geschlecht: <a id="gender"/></b></p>
 		<p><b>Alter: <a id="age"/></b></p>
 		<hr noshade color="#00000" size="2">
@@ -33,7 +34,11 @@
 		<p><b>Schritte: 8096</b></p>
 		<p><b>Aktive Minuten: 33</b></p>
 		<p><b>Kalorien: 1946<a id="age"/></b></p>
-        <center><button>Graph Schritte</button></center>
+		<form>    
+			<center>
+				<input id="graphSchritte" value="Graph Schritte" type="button" name="graphSchritte"/>
+			</center>
+		</form>
 		<hr noshade color="#00000" size="2">
 
     </div>
