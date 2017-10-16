@@ -10,6 +10,6 @@
         <Viewbox>
             <Image x:Name="camera"/>
         </Viewbox>
-        <awe:WebControl Name="browser" Source="C:\Users\CSTI\\Documents\Spiegel\KinectTest\mirror\index.html" IsTransparent="True"/>
+        <awe:WebControl Name="browser" Source="C:\Users\Maria.Luedemann\Documents\Spiegel\Spiegel\SpiegelAnwendung\mirror\index.html" IsTransparent="True"/>
     </Grid>
 </Window>
