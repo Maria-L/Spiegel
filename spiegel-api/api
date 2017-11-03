@@ -1,0 +1,6 @@
+name Spiegel
+version 2.0.0-SNAPSHOT
+package de.hawhamburg.csti.Spiegel
+
+msg GetEcho(s: String)
+msg Echo(s: String)
