@@ -5,21 +5,23 @@
 	
     <title>Spiegel</title>
     <link rel="stylesheet" href="styles.css">
-	
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script type="text/javascript" src="././js-connector/lib/connector.min.js"></script>
-	<script type="text/javascript" src="././js-connector/lib/spiegel-api.js"></script>
-	<!--<script src="././js-connector/spiegel_connector.js"></script> -->
-	<script src="spiegelScript.js" ></script>
+	<!--<script type="text/javascript" src="../../js-connector/lib/connector.min.js"></script>
+	<script type="text/javascript" src="../../js-connector/lib/spiegel-api.js"></script>
+	<script src="../../js-connector/spiegel_connector.js"></script> -->
+	<script  src="spiegelScript.js"></script>
 
 </head>
 
 <body>
 
 <center><h2>Einen schönen Tag<a id="welcome-text"/></h2></center>
-
+<!--<script type="text/javascript">
+document.getElementById("welcome-text").innerHTML = "Test";
+ </script> -->
 <div id="panels">
-    <div id="meta-panel" style="color:red;font-size:13px">
+    <div id="meta-panel" style="color:red;font-size:13px" class="Allgemein" >
 		<h3 style="font-size:20px"> Allgemein </h3>
 		<hr noshade color="#00000" size="2">
 		<p><b>Größe: <a id="groesse"/></b></p>
@@ -49,7 +51,7 @@
 
     </div>
     <div id="right-panel" style="color:green;font-size:13px">
-		<h3 style="font-size:15px"> Blutdruck vom: <a id="datum"/> </h3>
+		<h3 style="font-size:15px"> Blutdruck vom: <div id="datum"/> </h3>
 		<hr noshade color="#00000" size="2">
 		<p><b>Puls: <a id="puls"/></b></p>
 		<p><b>Systole: <a id="sys"/></b></p>

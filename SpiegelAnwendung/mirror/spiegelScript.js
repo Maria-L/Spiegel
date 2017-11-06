@@ -16,7 +16,7 @@ var welcomeName = "Maria"
 
 $(document).ready(function(){
     //Dinge die hier stehen müssen weil es sonst nicht funktionert. Keine Ahnung warum
-	//document.getElementById("dia").innerHTML = 5 + 6;
+	document.getElementById("dia").innerHTML = 5 + 6;
 	
 	//ids aus dem html den hier gesetzten Variablen zuweisen
 	($('#datum').html(Tag + "." + Monat + "." + Jahr));

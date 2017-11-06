@@ -1,3 +1,5 @@
+document.write(6 + 6);
+
 function appendText(text) {
 	var paragraph = document.createElement("p");
 	paragraph.innerHTML = "<strong>" + text + "</strong>";
@@ -24,7 +26,7 @@ window.setInterval(function() {
 }, 3000);
 
 //Globale Variablen definieren	und mit erstem Wert füllen
-	
+
 var diastole = getDiastole();
 var Systole = 102;
 var puls = 74;
