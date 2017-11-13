@@ -4,3 +4,9 @@ package de.hawhamburg.csti.Spiegel
 
 msg GetEcho(s: String)
 msg Echo(s: String)
+
+msg GetRefresh(id: Int)
+msg RefreshedData(diastole: Int, systole: Int, heartrate: Int)
+
+msg Bloodpresure(diastole: Int, systole: Int)
+msg GetBloodpresure(bloodpresure: Bloodpresure)

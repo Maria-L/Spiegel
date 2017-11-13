@@ -58,3 +58,4 @@ window.setInterval(function() {
 	connector.publish("EchoRequest", new GetEcho("" + Math.random()));
 }, 3000);
 
+//refresh empfangen und dann location.reload() 
