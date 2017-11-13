@@ -1,6 +1,6 @@
 //Globale Variablen definieren	und mit erstem Wert füllen
 	
-var diastole = getDiastole();
+var diastole = 15;
 var Systole = 102;
 var puls = 74;
 var gender = "W";

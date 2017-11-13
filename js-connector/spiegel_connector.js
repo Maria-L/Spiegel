@@ -1,31 +1,6 @@
-function appendText(text) {
-	var paragraph = document.createElement("p");
-	paragraph.innerHTML = "<strong>" + text + "</strong>";
-	document.getElementById("playground").appendChild(paragraph);
-}
-
-
-var connector = new MiddlewareConnector("ws://127.0.0.1:8080/connect");
-
-connector.subscribe("EchoRequest", EchoDeserializer, function(obj) {
-	if(obj instanceof GetEcho) {
-		appendText("GetEcho: " + obj.s);
-		connector.publish("EchoAnswer", new Echo(obj.s));
-	}
-});
-
-connector.subscribe("EchoAnswer", EchoDeserializer, function(obj) {
-	if(obj instanceof Echo)
-		appendText("Echo: " + obj.s);
-});
-
-window.setInterval(function() {
-	connector.publish("EchoRequest", new GetEcho("" + Math.random()));
-}, 3000);
-
 //Globale Variablen definieren	und mit erstem Wert füllen
 	
-var diastole = getDiastole();
+var diastole = 15;
 var Systole = 102;
 var puls = 74;
 var gender = "W";
@@ -55,16 +30,31 @@ $(document).ready(function(){
 	
 });
 
-function graphSchritte() {
-    var x = "hello wolrd";
-    $("p").html(x);
-};
 
-$("#graphSchritte").click(function() {
-    graphSchritte();
+//Middleware anbindung ab hier
+
+//function appendText(text) {
+//	var paragraph = document.createElement("p");
+//	paragraph.innerHTML = "<strong>" + text + "</strong>";
+//	document.getElementById("playground").appendChild(paragraph);
+//}
+
+
+var connector = new MiddlewareConnector("ws://127.0.0.1:8080/connect");
+
+connector.subscribe("EchoRequest", SpiegelDeserializer, function(obj) {
+	if(obj instanceof GetEcho) {
+		console.log("GetEcho: " + obj.s);
+		connector.publish("EchoAnswer", new Echo(obj.s));
+	}
 });
 
-function refreshA() {
-	
-    return 56;
-};
+connector.subscribe("EchoAnswer", SpiegelDeserializer, function(obj) {
+    if(obj instanceof Echo)
+		console.log("Echo: " + obj.s);
+});
+
+window.setInterval(function() {
+	connector.publish("EchoRequest", new GetEcho("" + Math.random()));
+}, 3000);
+

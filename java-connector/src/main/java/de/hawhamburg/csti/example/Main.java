@@ -4,7 +4,8 @@ import de.hawhamburg.csti.config.Config;
 import de.hawhamburg.csti.config.ConfigFactory;
 import de.hawhamburg.csti.messaging.Protocol;
 import de.hawhamburg.csti.messaging.japi.*;
-import de.hawhamburg.csti.example.japi.EchoSerialization;
+import de.hawhamburg.csti.Spiegel.japi.SpiegelSerialization;
+import de.hawhamburg.csti.Spiegel.*;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -33,19 +34,19 @@ public class Main {
         }
 
         //Register the application
-        RegisteredMiddlewareConnection rc = connector.register("JavaExample");
+        RegisteredMiddlewareConnection rc = connector.register("JavaSpiegelClient");
 
         //Send and receive messages
         System.out.println("java: subscribe");
-        rc.subscribe("EchoRequest", EchoSerialization.EchoDeserializer, msg -> {
+        rc.subscribe("EchoRequest", SpiegelSerialization.SpiegelDeserializer, msg -> {
                     if (msg instanceof GetEcho) {
                         GetEcho ge = (GetEcho) msg;
-                        rc.publish(new Echo(ge.s()), "EchoAnswer", EchoSerialization.EchoFormat);
+                        rc.publish(new Echo(ge.s()), "EchoAnswer", SpiegelSerialization.EchoFormat);
                     }
                 }
         );
 
-        rc.subscribe("EchoAnswer", EchoSerialization.EchoDeserializer, msg -> {
+        rc.subscribe("EchoAnswer", SpiegelSerialization.SpiegelDeserializer, msg -> {
                     System.out.println("java: received msg: " + msg);
                 }
         );
@@ -54,7 +55,7 @@ public class Main {
         final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
         scheduler.scheduleAtFixedRate(() -> {
             System.out.println("java: publish");
-            rc.publish(new GetEcho(generateString()), "EchoRequest", EchoSerialization.GetEchoFormat);
+            rc.publish(new GetEcho(generateString()), "EchoRequest", SpiegelSerialization.GetEchoFormat);
         }, 5, 5, SECONDS);
     }
 }

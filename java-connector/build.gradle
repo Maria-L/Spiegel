@@ -22,5 +22,5 @@ repositories {
 dependencies {
     compile 'de.hawhamburg.csti.messaging:jvm-config_2.12:2.0.0-SNAPSHOT'
     compile 'de.hawhamburg.csti.messaging:jvm-connector_2.12:2.0.0-SNAPSHOT'
-    compile 'de.hawhamburg.csti.example:echo-api:2.0.0-SNAPSHOT'
+    compile 'de.hawhamburg.csti.Spiegel:spiegel-api:2.0.0-SNAPSHOT'
 }
