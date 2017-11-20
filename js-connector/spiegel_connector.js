@@ -54,8 +54,18 @@ connector.subscribe("EchoAnswer", SpiegelDeserializer, function(obj) {
 		console.log("Echo: " + obj.s);
 });
 
+connector.subscribe("Spiegel", SpiegelDeserializer, function(obj) {
+    if(obj instanceof GetRefresh){
+		console.log("GetRefresh: " + obj.s);
+	}else if (obj instanceof Bloodpresure){
+		console.log("Bloddpresure: " + obj.s);
+	}
+		
+});
+
 window.setInterval(function() {
 	connector.publish("EchoRequest", new GetEcho("" + Math.random()));
+	connector.publish("Spiegel", new GetRefresh(1);
 }, 3000);
 
 //refresh empfangen und dann location.reload() 

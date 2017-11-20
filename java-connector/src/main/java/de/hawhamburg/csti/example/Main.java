@@ -45,7 +45,17 @@ public class Main {
                     }
                 }
         );
-
+		//Send and receive Spiegel messages
+		System.out.println("java: subscribe Spiegel");
+        rc.subscribe("Speiegel", SpiegelSerialization.SpiegelDeserializer, msg -> {
+                    if (msg instanceof GetRefresh) {
+                        GetRefresh gr = (GetRefresh) msg;
+						System.out.println("GetRefresh bekommen" + gr.s());
+                        //rc.publish(new Echo(gr.s()), "EchoAnswer", SpiegelSerialization.EchoFormat);
+                    }
+                }
+        );
+		
         rc.subscribe("EchoAnswer", SpiegelSerialization.SpiegelDeserializer, msg -> {
                     System.out.println("java: received msg: " + msg);
                 }
@@ -56,6 +66,7 @@ public class Main {
         scheduler.scheduleAtFixedRate(() -> {
             System.out.println("java: publish");
             rc.publish(new GetEcho(generateString()), "EchoRequest", SpiegelSerialization.GetEchoFormat);
+			rc.publish(new Bloodpresure(76, 122), "Spiegel", SpiegelSerialization.BloodpresureFormat);
         }, 5, 5, SECONDS);
     }
 }
