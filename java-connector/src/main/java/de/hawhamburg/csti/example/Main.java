@@ -50,7 +50,7 @@ public class Main {
         rc.subscribe("Speiegel", SpiegelSerialization.SpiegelDeserializer, msg -> {
                     if (msg instanceof GetRefresh) {
                         GetRefresh gr = (GetRefresh) msg;
-						System.out.println("GetRefresh bekommen" + gr.s());
+						System.out.println("GetRefresh bekommen" + gr.id());
                         //rc.publish(new Echo(gr.s()), "EchoAnswer", SpiegelSerialization.EchoFormat);
                     }
                 }

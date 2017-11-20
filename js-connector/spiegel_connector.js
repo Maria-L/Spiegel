@@ -65,7 +65,7 @@ connector.subscribe("Spiegel", SpiegelDeserializer, function(obj) {
 
 window.setInterval(function() {
 	connector.publish("EchoRequest", new GetEcho("" + Math.random()));
-	connector.publish("Spiegel", new GetRefresh(1);
+	connector.publish("Spiegel", new GetRefresh(1));
 }, 3000);
 
 //refresh empfangen und dann location.reload() 
