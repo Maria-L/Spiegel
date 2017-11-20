@@ -1,6 +1,5 @@
-//Globale Variablen definieren	und mit erstem Wert füllen
 
-var diastole = 72;
+var diastole;
 var Systole = 102;
 var puls = 74;
 var gender = "W";
@@ -13,6 +12,53 @@ var Monat = Datum.getMonth() + 1;
 var Jahr = Datum.getFullYear();
 	
 var welcomeName = "Maria"
+
+//Middleware anbindung ab hier
+
+//function appendText(text) {
+//	var paragraph = document.createElement("p");
+//	paragraph.innerHTML = "<strong>" + text + "</strong>";
+//	document.getElementById("playground").appendChild(paragraph);
+//}
+
+
+var connector = new MiddlewareConnector("ws://127.0.0.1:8080/connect");
+
+connector.subscribe("EchoRequest", SpiegelDeserializer, function(obj) {
+	if(obj instanceof GetEcho) {
+		console.log("GetEcho: " + obj.s);
+		//connector.publish("EchoAnswer", new Echo(obj.s));
+	}
+});
+
+connector.subscribe("EchoAnswer", SpiegelDeserializer, function(obj) {
+    if(obj instanceof Echo)
+		console.log("Echo: " + obj.s);
+});
+
+connector.subscribe("Spiegel", SpiegelDeserializer, function(obj) {
+    if(obj instanceof GetRefresh){
+		console.log("GetRefresh: " + obj.id);
+	}else if (obj instanceof Bloodpresure){
+		console.log("Bloddpresure: " + obj.diastole);
+        var diastole = obj.diastole;
+        document.getElementById("dia").innerHTML = obj.diastole;
+        document.getElementById("sys").innerHTML = obj.systole;
+        //location.reload()
+	}
+		
+});
+
+window.setInterval(function() {
+	//connector.publish("EchoRequest", new GetEcho("" + Math.random()));
+	connector.publish("Spiegel", new GetRefresh(1));
+}, 3000);
+
+//refresh empfangen und dann location.reload() 
+
+//Globale Variablen definieren	und mit erstem Wert füllen
+//if diastole 
+
 
 $(document).ready(function(){
     //Dinge die hier stehen müssen weil es sonst nicht funktionert. Keine Ahnung warum
@@ -29,43 +75,3 @@ $(document).ready(function(){
 	($('#welcome-text').html(welcomeName));
 	
 });
-
-
-//Middleware anbindung ab hier
-
-//function appendText(text) {
-//	var paragraph = document.createElement("p");
-//	paragraph.innerHTML = "<strong>" + text + "</strong>";
-//	document.getElementById("playground").appendChild(paragraph);
-//}
-
-
-var connector = new MiddlewareConnector("ws://127.0.0.1:8080/connect");
-
-connector.subscribe("EchoRequest", SpiegelDeserializer, function(obj) {
-	if(obj instanceof GetEcho) {
-		console.log("GetEcho: " + obj.s);
-		connector.publish("EchoAnswer", new Echo(obj.s));
-	}
-});
-
-connector.subscribe("EchoAnswer", SpiegelDeserializer, function(obj) {
-    if(obj instanceof Echo)
-		console.log("Echo: " + obj.s);
-});
-
-connector.subscribe("Spiegel", SpiegelDeserializer, function(obj) {
-    if(obj instanceof GetRefresh){
-		console.log("GetRefresh: " + obj.s);
-	}else if (obj instanceof Bloodpresure){
-		console.log("Bloddpresure: " + obj.s);
-	}
-		
-});
-
-window.setInterval(function() {
-	connector.publish("EchoRequest", new GetEcho("" + Math.random()));
-	connector.publish("Spiegel", new GetRefresh(1));
-}, 3000);
-
-//refresh empfangen und dann location.reload() 
